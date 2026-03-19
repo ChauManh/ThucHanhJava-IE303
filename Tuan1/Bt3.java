@@ -73,20 +73,28 @@ public class Bt3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Nhập số trạm: ");
         int soTram = scanner.nextInt();
+
         List<Diem> danhSachTram = new ArrayList<>();
 
         for (int i = 0; i < soTram; i++) {
+            System.out.print("Nhập hoành độ trạm " + (i + 1) + ": ");
             int hoanhDo = scanner.nextInt();
+
+            System.out.print("Nhập tung độ trạm " + (i + 1) + ": ");
             int tungDo = scanner.nextInt();
+
             danhSachTram.add(new Diem(hoanhDo, tungDo));
         }
 
         List<Diem> cacTramNgoaiCung = timBaoLoi(danhSachTram);
 
+        System.out.println("Các trạm ngoài cùng là:");
         for (Diem diem : cacTramNgoaiCung) {
             System.out.println(diem);
         }
+
         scanner.close();
     }
 }
